@@ -1,9 +1,23 @@
 import org.jetbrains.annotations.NotNull;
 
+/**
+ * This class is a implementation of hash table using the method of chaining to resolve
+ * the problem of hash functions that arent perfect spread.
+ * Is solved using a simple linked list in each position of the table.
+ * Stores Nodes of pair key-values.
+ * Space Complexity O(n).
+ * @param <K> Type of the keys objects.
+ * @param <V> Type of the values objects.
+ */
 public class HashTableChaining<K,V> {
     // Chaining table that stores pairs key-value.
-    //Intern class that represents a node of a simple linked list.
-    private class Node<K, V> {
+
+    /**
+     * Intern class that represents a node of a simple linked list.
+     * @param <K> Key object type.
+     * @param <V> Value object type.
+     */
+    private class Node<K, V>{
         K key;
         V value;
         Node<K, V> next;
@@ -42,6 +56,8 @@ public class HashTableChaining<K,V> {
 
     /**
      * Returns the value associated with the provide key.
+     * Time Complexity:
+     * Successful and not successful searches: O(1) accesses on average.
      * @param key associated to the value.
      * @return V value, if there is a Node with that key.
      *         else returns null.
@@ -57,6 +73,9 @@ public class HashTableChaining<K,V> {
 
     /**
      * Creates a node with the given parameters and insert it in the table.
+     * Time Complexity: O(1) or O(n).
+     * Restructuring garantices n operations in O(1).
+     * But restructuring costs O(n) operations.
      * @param key
      * @param value
      */
@@ -67,14 +86,18 @@ public class HashTableChaining<K,V> {
 
         //Insert the Node at the beginning of the ith list.
         table[i] = new Node(key, value, table[i]);
+        System.out.println("pos="+i);
     }
 
     /**
      * Deletes form the table, the pair (k,v) with that key.
+     * Equivalent to a successful search.
+     * Timple Complexity, O(1) accesses on average.
      * @param key of the element to pair to delete.
-     * @return
+     * @return True, if the pair k-v with the provide key was deleted successfully.
+     *         False, else.
      */
-    public boolean delete(K key) {
+    public boolean remove(K key) {
         int i = index(key); //Get the corresponding index to that key.
 
         // Search the element in the ith list in the table.
@@ -95,8 +118,10 @@ public class HashTableChaining<K,V> {
 
     /**
      * It doubles the size of the table.
+     * Time Complexity O(n), but garantices (n) insertions in O(1).
      */
     protected void restructure() {
+
         Node<K, V>[] tmpTable = table; //Save the last table.
         n = 0;m = 2 * m;               // Double the size of the last table.
         table = new Node[m];           //Create a new one.
@@ -110,6 +135,7 @@ public class HashTableChaining<K,V> {
                 node = node.next;
             }
         }
+        System.out.println("resturcturation, m="+m);
     }
     
 }
