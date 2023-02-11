@@ -67,7 +67,7 @@ public class HashTableOpenAddressing<K,V> {
 
     /**
      * Returns the corresponding index for the provide key.
-     *
+     * Time Complexity: O(1)
      * @param key
      * @return Corresponding index.
      */
@@ -77,7 +77,7 @@ public class HashTableOpenAddressing<K,V> {
 
     /**
      * Calculate the scan jump.
-     *
+     * Time Complexity: O(1)
      * @param c
      * @return The scan Jump.
      */
@@ -106,6 +106,7 @@ public class HashTableOpenAddressing<K,V> {
 
     /**
      * Returns the value associated with the provide key.
+     * Time Complexity: O(1)
      * @param key associated to the value.
      * @return V value, if there is a Node with that key.
      *         else returns null.
@@ -128,6 +129,7 @@ public class HashTableOpenAddressing<K,V> {
 
     /**
      * Insert the pair k-v in the table, in the corresponding position.
+     * Time Complexity: O(1)
      * @param key
      * @param value
      */
@@ -151,6 +153,7 @@ public class HashTableOpenAddressing<K,V> {
      * Deletes form the table, the pair (k,v) with that key.
      * Equivalent to a successful search.
      * Use strategy of lazy delete to avoid errors.
+     * Time Complexity: O(1)
      * @param key of the element to pair to delete.
      * @return True, if the pair k-v with the provide key was deleted successfully.
      *         False, else.

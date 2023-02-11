@@ -2,7 +2,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * This class is a implementation of hash table using the method of chaining to resolve
- * the problem of hash functions that arent perfect spread.
+ * the problem of hash functions that aren't perfect spread.
  * Is solved using a simple linked list in each position of the table.
  * Stores Nodes of pair key-values.
  * Space Complexity O(n).
@@ -32,7 +32,7 @@ public class HashTableChaining<K,V> {
     private int m;             // Size of the table.
     private int n;             // Number of elements.
     private double maxL;       // Maximum Load factor.
-    private Node<K, V>[] table; // Hash Table (array of pairs key-value).
+    private Node<K,V>[] table; // Hash Table (array of pairs key-value).
 
     // Constructor with default values.
     public HashTableChaining() {
@@ -49,13 +49,17 @@ public class HashTableChaining<K,V> {
         this.n = 0;
     }
 
-    // Returns the index corresponding to that key using the hash.
-    protected int index(@NotNull K key) {
+    /**
+     * Returns the index corresponding to that key using the hash.
+     * Time Complexity: O(1)
+     * @param key key of the pair key-value.
+     * @return
+     */
+    public int index(@NotNull Object key) {
         return Math.abs(key.hashCode()) % m;
     }
 
     /**
-     * Returns the value associated with the provide key.
      * Time Complexity:
      * Successful and not successful searches: O(1) accesses on average.
      * @param key associated to the value.
@@ -137,6 +141,6 @@ public class HashTableChaining<K,V> {
         }
         System.out.println("resturcturation, m="+m);
     }
-    
+
 }
 
