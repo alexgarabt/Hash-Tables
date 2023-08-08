@@ -1,11 +1,12 @@
 # Hash-Tables
-### What are the hash tables??
+### What are the hash tables
 > Also known as hash map, is a _"complex" data structure_ that implements an associative array or dictionary. It is an abstract data type that maps keys to values, MAP<Key,Value>. [Wikipedia][wikipedia hash table].
 
 
 * Hash tables are really useful in terms of efficiency ***(time complexity)*** for ADT like set, map and dictionary.
 *  It reduces many operations to O(1). More detailed in the [Complexity.pdf][path complexity file] file.
 --- 
+### How are implemented
 Using **arrays** and **linked lists** as primarly data structure and some ideas, more explained in the code of each one. We have to types of hash tables:
 
 >**Chaining** and **Open** addressing.
@@ -16,6 +17,12 @@ Using **arrays** and **linked lists** as primarly data structure and some ideas,
     * **Full**: Contains an element, cannot be inserted into it.
     * **Empty**: Can be inserted into it, stops scanning.
     * **Deleted**: It can be inserted into it, it does not stop the scan.
+      
+More detailed in the [theory slides][theory] *(in spanish)* of subject *Data structures and algorithms* of UVA university.
+
 ---
+###
+
 [wikipedia hash table]: https://en.wikipedia.org/wiki/Hash_table
 [path complexity file]: Complexity.pdf
+[theory]: theory.pdf
