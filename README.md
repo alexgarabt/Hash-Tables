@@ -1,4 +1,4 @@
-# Hash-Tables
+# Hash Tables
 ### What are the hash tables
 > Also known as hash map, is a _"complex" data structure_ that implements an associative array or dictionary. It is an abstract data type that maps keys to values, MAP<Key,Value>. [Wikipedia][wikipedia hash table].
 
@@ -9,7 +9,7 @@
 ### How are implemented
 Using **arrays** and **linked lists** as primarly data structure and some ideas, more explained in the code of each one. We have to types of hash tables:
 
->**Chaining** and **Open** addressing.
+>**Chaining** and **Open** **addressing**.
 * The **Chaining** strategy solves the problem of collisions allowing more than one element to be stored in each cell in the table *(array)*, using *linked lists*.
 * The **Open** strategy solves the collision problem by establishing a sequence of positions (scan path) in which you can find an element in the table.
   * **Multiple cells available for each item**
